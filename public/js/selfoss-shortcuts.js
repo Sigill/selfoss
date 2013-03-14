@@ -36,6 +36,20 @@ selfoss.shortcuts = {
         shortcut.add('Ctrl+m', function() {
             $('#nav-mark').click();
         }, options);
+
+        // throw (mark as read & open next)
+        shortcut.add('t', function() {
+            $('.entry.selected.unread .entry-unread').click();
+            selfoss.shortcuts.nextprev('next', true);
+            return false;
+        }, options);
+
+        // throw (mark as read & open previous)
+        shortcut.add('Shift+t', function() {
+            $('.entry.selected.unread .entry-unread').click();
+            selfoss.shortcuts.nextprev('prev', true);
+            return false;
+        }, options);
     },
     
     
